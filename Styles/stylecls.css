@@ -1,0 +1,10 @@
+table{
+    border: 0px black;border-collapse: collapse; width: 80%;
+}
+td{
+    border: 0px crimson;background-color:cadetblue;color: darkblue;text-align: left;padding: 10px;
+    
+}
+.show{
+    width:180px;font-size:10px;height: 30px;background-color: blue;color: white;
+}

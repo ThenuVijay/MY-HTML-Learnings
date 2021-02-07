@@ -1,0 +1,13 @@
+table{
+    border:8px black;border-collapse: collapse;border-width:5px;border-color: brown;border-style: solid;
+}
+td{
+    color:black;background-color: rgb(231, 120, 241);padding:15px;border: 0px black;text-align: left;
+}
+span{
+    color: red;font-size: 10px;
+}
+.weak{background-color: red;height: 30px;color: white;padding: 3px;}
+.medium{background-color:orange;height: 30px;color: white;padding: 3px;}
+.strong{background-color:limegreen;height: 30px;color: white;padding: 3px;}
+.verystrong{background-color:green;height: 30px;color: white;padding: 3px;}

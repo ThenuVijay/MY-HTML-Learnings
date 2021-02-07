@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Styles\stylecls.css">
+</head>
+<body style="background-color: darksalmon;">
+    <h2 style="background-color: black;color: cornsilk;">Add Class and Remove Class</h2>
+    <table>
+        <tr><td>Name</td><td><input onmouseover="onMouseover(0)" onmouseout="onMouseout(0)" type="text"></td>
+        <td><p>  </p></td></tr>
+        <tr><td>Father</td><td><input onmouseover="onMouseover(1)" onmouseout="onMouseout(1)" type="text"></td>
+        <td><p>  </p></td></tr>
+        <tr><td>Mother</td><td><input onmouseover="onMouseover(2)" onmouseout="onMouseout(2)" type="text"></td>
+        <td><p>  </p></td></tr>
+        <tr><td>Mobile</td><td><input onmouseover="onMouseover(3)" onmouseout="onMouseout(3)" type="text"></td>
+        <td><p>  </p></td></tr>
+    </table>
+    <script>
+        x=document.getElementsByTagName("input");
+        y=document.getElementsByTagName("p");
+
+        function onMouseover(i){
+            
+            if(x[i].value==""){
+                y[i].innerHTML="Pls Fill the Field";
+                y[i].className="show";
+            }
+        }    
+        function onMouseout(i){
+                y[i].innerHTML="";
+                y[i].classList.remove("show");
+        }   
+        
+    </script>
+</body>
+</html>

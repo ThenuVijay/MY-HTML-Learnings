@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="Styles\styleform.css">
+</head>
+<body style="background-color:greenyellow">
+    <h2>Form Validation Using Regex</h2>
+    <form action="image.html" onsubmit="return check()" autocomplete="off">
+        <table>
+            <tr><td>Name :<span>Alphabets only allowed!!!</span></td><td><input ></td></tr>
+            <tr><td>Mobile :<span>10 digit Number!!</span></td><td><input ></td></tr>
+            <tr><td>E-Mail :<span>Use Correct Format!!</span></td><td><input ></td></tr>
+            <tr><td>Password :<span>Use one capital,small,Number,special character</span></td>
+                <td><input oninput="checkpass()" onmouseout="mouseout()"><br><span id="span"></span></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Signup" style="width: 100%;"></td></tr>
+        </table>
+
+    </form>
+    <script>
+        x=document.getElementsByTagName("input");
+        function check()
+        {
+            alpha=/^[A-Za-z]+$/
+            if(x[0].value=="")
+            {
+                alert("Please Fill Name");
+                return false;
+            }
+            if(!alpha.test(x[0].value))
+            {
+                alert("Use only Alphabets in Names");
+                return false;
+            }
+            
+            
+            number=/^([0-9]{10})+$/
+            if(x[1].value=="")
+            {
+                alert("Please Fill Mobile Number");
+                return false;
+            }
+            if(!number.test(x[1].value))
+            {
+                alert("Use only 10 digit Numbers");
+                return false;
+            }
+            
+            
+            email=/^([A-Za-z0-9_.])+\@([a-z])+\.([a-z])+$/
+            if(x[2].value=="")
+            {
+                alert("Please Fill Email");
+                return false;
+            }
+            if(!email.test(x[2].value))
+            {
+                alert("Use Correct Format");
+                return false;
+            }
+            
+            
+            password=/^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&*]).{6,})+$/
+            if(x[3].value=="")
+            {
+                alert("Please Fill Password");
+                return false;
+            }
+            if(!password.test(x[3].value))
+            {
+                alert("password should contain alpha numeric");
+                return false;
+            }
+            
+        }
+        function checkpass()
+        {
+           length=x[3].value.length; 
+           if(length<3){
+               document.getElementById("span").className="weak";
+               document.getElementById("span").innerHTML="Your Password is weak";
+           }
+           else if(length>=3 && length<=5){
+               document.getElementById("span").className="medium";
+               document.getElementById("span").innerHTML="Your Password is medium";
+           }
+           else if(length>6 && length<=8){
+               document.getElementById("span").className="strong";
+               document.getElementById("span").innerHTML="Your Password is strong";
+           }
+           else if(length>9 && length<=10){
+               document.getElementById("span").className="verystrong";
+               document.getElementById("span").innerHTML="Your Password is very strong";
+           }
+        }
+        function mouseout()
+        {
+            document.getElementById("span").classList.remove("weak","medium","strong","verystrong");
+            document.getElementById("span").innerHTML=""
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+div{
+    width:40%;height: 200px;border: 1px;background-color: yellow;
+}
+button{
+    height:30px;width:40%;background-color: indigo;color:ivory
+}
+input{
+    width:40%;height:40px;color:black;background-color: white;text-align:left;
+}

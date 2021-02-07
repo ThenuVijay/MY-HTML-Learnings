@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="b" style="background-color: yellow;">
+    <h2 id="h" style="color: teal;">Refresh</h2>
+    <input id="i1" placeholder="Enter time to refresh" style="width:30%; color: brown;background-color:yellow;"><br>
+    <button onclick="Refresh()" style="background-color: darkblue; color: white;">Refresh</button>
+    <script>
+        function Refresh(){
+            //time=document.getElementById("i1").value;
+            //time=parseInt(time);
+            time=3;
+            setTimeout("location.reload(true)",time*1000);
+            if(setTimeout("location.assign('calc.html')",time*1000)){
+                document.getElementById("b").style.backgroundColor="red";
+            }
+        }setInterval(Refresh,3000);
+    </script>
+</body>
+</html>

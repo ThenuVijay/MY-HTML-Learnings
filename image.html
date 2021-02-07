@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body style="background-color: violet;">
+    <h1>Image Slider</h1>
+    <img src="Images/Chrysanthemum.jpg" id="m1" width="500" height="400"><br>
+    <button onclick="forward()" style="width: 10%; color: red; background-color: yellow;">Next</button>
+    <button onclick="back()" style="width: 10%; color: red; background-color: yellow;">Previous</button>
+    <script>
+        x=["Images/Chrysanthemum.jpg","Images/Desert.jpg","Images/Tulips.jpg","Images/Hydrangeas.jpg"];
+        slide=document.getElementById("m1");
+        count=-1;
+            //slide.src=x[3];  
+        function forward()
+        {
+            clearInterval(cls);
+            count=count+1;
+            if(count<=x.length)
+            {
+            if(count==x.length)
+                {
+                   count=0;
+                }
+            slide.src=x[count];
+            }
+        }
+        function back()
+        {
+            clearInterval(cls)
+            count=count-1;
+            if(count<x.length)
+                {
+                    if(count==-1 || count==-2)
+                    {
+                        index=x.length-1;
+                        count=index
+                    }
+                slide.src=x[count];
+                }
+        }
+        count=0;
+        function slideshow()
+        {
+            if(count<=x.length)
+            {
+                if(count==x.length)
+                {
+                    count=0;
+                }
+                slide.src=x[count];
+                console.log(count);
+                count=count+1;
+                
+            }
+        }
+        cls=setInterval(slideshow,1000);
+    </script>
+    
+</body>
+</html>

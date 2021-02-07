@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="Styles\styleform.css">
+</head>
+<body>
+    <form action="chat.html" onsubmit="return check()" autocomplete="off">
+    <table>
+        <tr><td>Name<span style="color: red;">**</span></td><td><input type="text" id="txt"></td></tr>
+        <tr><td>Father Name </td><td><input type="text" name="" id=""></td></tr>
+        <tr><td>Mother Name </td><td><input type="text" name="" id=""></td></tr>
+        <tr><td>MobileNumber<span style="color: red;">**</span></td><td><input type="text" id="mob"></td></tr>
+        <tr><td colspan="2"><input type="submit" value="signup"></td></tr>
+    </table>
+    </form>
+    <script>
+      /* x=document.getElementsByTagName("input");
+       function check(){
+            if(x[0].value==""){
+                alert("Please Fill Name Field");
+                //return false;
+            }else if(x[3].value==""){
+                alert("please Fill Mobile Number");
+            }
+        } */ 
+        function check()
+        { 
+        name=document.getElementById("txt").value;
+        mobile=document.getElementById("mob").value;
+        if(name=="")
+        {
+            alert("Please Fill name");
+            return false;
+        }
+        else if(mobile=="")
+        {
+            alert("Please fill mobile");
+            return false;
+        }
+        }
+    </script>
+    
+</body>
+</html>

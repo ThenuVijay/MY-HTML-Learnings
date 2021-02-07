@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="color: blue;">Alert,Confirm,Prompt boxes</h2>
+    <p id="p1"></p>
+    <button onclick="check()" style="background-color: chocolate;color: cornsilk;">submit</button>
+    <script>
+        function check(){
+        //alert("Don't visit this page");
+        /*if(confirm("confirm to proceed")){
+            document.getElementById("p1").innerHTML="Message Sent";
+        }
+        else{
+            document.getElementById("p1").innerHTML="please check"
+        }*/
+        password=prompt("Enter your password to proceed");
+        if(password=="thenu"){
+            document.getElementById("p1").innerHTML="Message Sent";
+
+        }
+        else{
+            document.getElementById("p1").innerHTML="please check"
+        }
+        }
+    </script>
+</body>
+</html>
